@@ -14,10 +14,10 @@ def driver():
     driver = webdriver.Remote(
         command_executor='http://127.0.0.1:4723/wd/hub',
         desired_capabilities={
-            'app': app,
-            'platformName' : 'iOS',
-            'platformVersion' : '10.2',
-            'deviceName' : 'iPhone SE',
+            # 'app': app,
+            # 'platformName' : 'iOS',
+            # 'platformVersion' : '10.2',
+            # 'deviceName' : 'iPhone SE',
         }
     )
     webview = driver.contexts[-1]
