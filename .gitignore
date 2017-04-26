@@ -35,3 +35,11 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+.virtualenv
+.DS_Store
+.cache/
+platforms/
+plugins/
+__pycache__
+*.pyc
