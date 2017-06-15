@@ -8,18 +8,31 @@ scenarios('features')
 @pytest.fixture(scope='session', autouse=True)
 def driver():
     from appium import webdriver
-    app = os.path.abspath(
+    ios = os.path.abspath(
                 os.path.join(os.path.dirname(__file__),
                 '../platforms/ios/build/emulator/HelloCordova.app'))
+    android = os.path.abspath(
+                os.path.join(os.path.dirname(__file__),
+                '../platforms/android/build/outputs/apk/android-debug.apk'))
     driver = webdriver.Remote(
         command_executor='http://127.0.0.1:4723/wd/hub',
         desired_capabilities={
-            # 'app': app,
+            # IOS
+            # 'app': ios,
             # 'platformName' : 'iOS',
             # 'platformVersion' : '10.2',
             # 'deviceName' : 'iPhone SE',
+            # ANDROID
+            # 'app': android,
+            # 'platformName' : 'Android',
+            # 'platformVersion' : '6.0',
+            # 'deviceName' : 'Android',
+            # 'autoWebview': 'true',
+            # 'udid' : '0a30789d',
         }
     )
+    time.sleep(1)
+    print driver.contexts
     webview = driver.contexts[-1]
     driver.switch_to.context(webview)
     yield driver
