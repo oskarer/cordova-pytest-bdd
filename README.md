@@ -13,7 +13,7 @@ Create the virtual environment in the .virtualenv folder (only has to be done on
 
 Activate the virtual environment;
 
-`./.virtualenv/bin/activate`
+`.virtualenv/bin/activate`
 
 ### 2. Install dependencies
 
